@@ -1,0 +1,32 @@
+body {
+ display:block;
+}
+ .container {
+  display:block;
+  position:relative;
+  width:95%;
+  margin:2% 3%;
+ }
+
+ aside{
+  display:inline-block;
+  position:relative;
+  width:25%;
+  vertical-align:top;
+
+
+  img{
+   width:250px;
+   height:250px;
+  }
+ }
+
+ .rightSide {
+  display:inline-block;
+  width:65%;
+
+
+ }
+ .hide {
+  display:none;
+ }

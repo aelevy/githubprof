@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="githubproftest.css">
+  <title>Underscore Demo</title>
+  <script type="template/html" id="profileTmpl">
+  <% _.each(gitHubProfile, function(element, index, list) { %>
+          <img src="<%= element.avatar_url %>">
+          <h1><%= element.name %></h1>
+          <h2> <%=element.login%> </h2><hr>
+          <p>  <%=element.location%> </p>
+          <p>  Joined on <%=element.created_at%> </p><hr>
+           <a href="<%=element.followers_url%>"><%=element.followers%>
+              <p>Followers</p></a>
+          <a href="<%=element.starred_url%>"><%=element.public_gists%>
+              <p>Starred</p></a>
+          <a href="<%=element.following_url%>"><%=element.followers%>
+              <p>Following</p></a>
+            <hr>
+          <p>Organizations</p>
+          <a href="<%=element.organizations_url%>"><img src="" alt=""></a><br>
+
+      <% }); %>
+
+  </script>
+
+  <script type ="template/html" id="reposTmpl">
+    <% _.each(gitHubRepos, function(element, index, list) { %>
+      <br>
+      <a href=" <%=element.html_url%> "><%= element.name %> </a>
+      <p> <%=element.language%>
+      <a href=""><%=element.stargazers_count%></a>
+      <a href=""><%=element.forks%></a>
+      </p>
+      <br>
+        <p><%=element.description%></p><br>
+        <p>Last updated <%=element.updated_at%></p>
+      <hr>
+
+
+      <% }); %>
+    </script>
+
+    <script type = "template/html" id="paTmpl">
+      <%_.each(gitHubPA, function(element,index,list) { %>
+         <div>
+          <a href="<%=element.name %>"></a>
+          <p><%= element.type %></p>
+         </div>
+
+    <%  }); %>
+    </script>
+</head>
+<body>
+<div class="container">
+  <aside>
+
+  </aside>
+  <div class="rightSide">
+   <a class = "nav" id="repos" href="">  Repositories</a>
+    <a class = "nav" id="activity" href=""> Public Activity</a>
+   <section class="repository">
+
+   </section>
+   <div class="pubActivity hide">
+
+   </div>
+ </div>
+</div>
+
+
+<script type="text/javascript" src="node_modules/underscore/underscore.js"></script>
+<script src="node_modules/jquery/dist/jquery.js"></script>
+<script src="githubdata.js"></script>
+<script type="text/javascript" src="githubproftest.js"></script>
+
+</body>
+</html>
